@@ -1,3 +1,37 @@
-h1 {
-    color: navy
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    flex: 1 1 600px;
+    height: 100%;
+    background-image: url('./images/jonah-brown-l1iwe7l6-2Q-unsplash.jpg');
+    background-size: cover;
+}
+
+
+.sign-up-fields {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.sign-up-field {
+    flex: 0 0 400px;
+    display: flex;
+    flex-direction: column;
 }

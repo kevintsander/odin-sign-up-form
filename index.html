@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,55 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Wow, what a great website!</h1>
+    <header class="splash">
+        <div class="logo-container">Beer Olympics</div>
+        <div class="logo-caption">Photo credit to Jonah Brown at <a
+                href="https://unsplash.com/photos/l1iwe7l6-2Q">Unsplash</a></div>
+    </header>
+    <main>
+        <h2 class="sign-up-greeting">Are you ready for party of the century?
+            <br><br>
+            Do you think you have what it takes to out-party your friends and neigbors?
+            Fill out the form below to sign up for the <i>ultimate, one-of-a-kind</i> Beer Olympics experience!
+            <br><br>
+            (<i>*pssst*</i> You know you want to. Don't get FOMO.)
+        </h2>
+        <form class="sign-up-form">
+            <fieldset>
+                <legend>Beerlympian Details</legend>
+                <div class="sign-up-fields">
+                    <label class="sign-up-field" for="first-name">
+                        First name:
+                        <input class="input-item" type="text" name="first-name" required>
+                    </label>
+                    <label class="sign-up-field" for="last-name">
+                        Last name:
+                        <input class="input-item" type="text" name="last-name" required>
+                    </label>
+                    <label class="sign-up-field" for="email">
+                        Email Address:
+                        <input class="input-item" type="email" name="email" required>
+                    </label>
+                    <label class="sign-up-field" for="phone">
+                        Phone #:
+                        <input class="input-item" type="tel" name="phone">
+                    </label>
+                    <label class="sign-up-field" for="password">
+                        Password:
+                        <input class="input-item" type="password" name="password">
+                    </label>
+                    <label class="sign-up-field" for="confirm-password">
+                        Confirm Password:
+                        <input class="input-item" type="password" name="confirm-password">
+                    </label>
+                </div>
+            </fieldset>
+            <button>Sign Up</button>
+        </form>
+        <p class="log-in-message">Already signed up? <a>Log in</a> to view your account</p>
+    </main>
 </body>
+
 </html>
