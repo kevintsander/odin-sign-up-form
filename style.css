@@ -1,3 +1,9 @@
+:root {
+    --main-color: #fff000;
+    --dark-accent: #2d2322;
+    --error-red: #f2002e;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -22,37 +28,46 @@ header {
     flex: 0 0 500px;
     background-image: url('./images/jonah-brown-l1iwe7l6-2Q-unsplash.jpg');
     background-size: cover;
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 main {
-    padding: 1rem;
-    background-image: url('./images/diamond-sunset.svg')
+    margin: 0;
+    padding: 0;
+    background-image: url('./images/diamond-sunset.svg');
+}
+
+fieldset {
+    margin: 0;
+    border: 0;
 }
 
 .logo-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     margin: auto;
-    width: 90%;
+    width: 100%;
+    background: hsla(0, 100%, 100%, 30%)
 }
 
 .logo-container>img {
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 50%;
 }
 
 .logo-title {
-    position: absolute;
-    top: 340px;
+    position: relative;
+    top: -10%;
     font-size: 4rem;
     font-weight: 300;
     color: whitesmoke;
     text-shadow: 0 0 3px black;
+    text-align: left;
 }
 
 .logo-caption {
@@ -64,8 +79,19 @@ main {
     color: whitesmoke;
 }
 
+.sign-up-greeting,
+.log-in-message {
+    margin: 1rem;
+}
+
 .sign-up-form {
     padding: 0.5rem;
+    background: rgba(255, 51, 0, 30%)
+}
+
+.sign-up-form>fieldset>legend {
+    font-weight: 100;
+    font-size: 1.5rem;
 }
 
 .sign-up-fields {
@@ -81,4 +107,26 @@ main {
     display: flex;
     flex: 1 0 calc(50% - 1rem);
     flex-direction: column;
+}
+
+.sign-up-field input {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--dark-accent);
+    box-shadow: 1px 1px 1px var(--dark-accent);
+}
+
+.password-no-match {
+    color: var(--error-red);
+    border: 1px solid var(--error-red);
+}
+
+.go-button {
+    font-size: 1rem;
+    margin: 1rem 0;
+    padding: 0.25rem 0.75rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--main-color);
+    box-shadow: 1px 1px 1px var(--dark-accent);
 }
