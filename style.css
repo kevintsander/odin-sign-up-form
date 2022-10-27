@@ -17,9 +17,9 @@ html {
 body {
     margin: 0;
     display: flex;
+    min-height: 100vh;
     flex-direction: row;
     align-items: stretch;
-    height: 100vh;
     font-family: 'Londrina Solid', cursive;
 }
 

@@ -34,31 +34,31 @@
             <fieldset>
                 <legend>Beerlympian Details</legend>
                 <div class="sign-up-fields">
-                    <label class="sign-up-field" for="first-name">
-                        First name*:
+                    <div id="sign-up-first" class="sign-up-field">
+                        <label for="first-name">First Name*:</label>
                         <input class="input-item" type="text" name="first-name" required>
-                    </label>
-                    <label class="sign-up-field" for="last-name">
-                        Last name*:
+                    </div>
+                    <div id="sign-up-last" class="sign-up-field">
+                        <label for="last-name">Last name*:</label>
                         <input class="input-item" type="text" name="last-name" required>
-                    </label>
-                    <label class="sign-up-field" for="email">
-                        Email Address*:
+                    </div>
+                    <div id="sign-up-email" class="sign-up-field">
+                        <label for="email">Email Address*:</label>
                         <input class="input-item" type="email" name="email" required>
-                    </label>
-                    <label class="sign-up-field" for="phone">
-                        Phone #:
+                    </div>
+                    <div id="sign-up-phone" class="sign-up-field">
+                        <label for="phone">Phone #:</label>
                         <input class="input-item" type="tel" name="phone">
-                    </label>
-                    <label class="sign-up-field" for="password">
-                        Password*:
-                        <input id="password" class="input-item" type="password" name="password"
-                            onkeyup="setPasswordMatch()">
-                    </label>
-                    <label class="sign-up-field" for="confirm-password">
-                        Confirm Password*:
-                        <input id="confirm-password" class="input-item" type="password" name="confirm-password"
-                            onkeyup="setPasswordMatch()">
+                    </div>
+                    <div id="sign-up-password" class="sign-up-field">
+                        <label for="password">Password*:</label>
+                        <input class="input-item" type="password" name="password" onkeyup="setPasswordMatch()">
+                    </div>
+                    <div id="sign-up-confirm-password" class="sign-up-field">
+                        <label for="confirm-password">Confirm Password*:</label>
+                        <input class="input-item" type="password" name="confirm-password" onkeyup="setPasswordMatch()">
+                        <p class="error"></p>
+                    </div>
                     </label>
                 </div>
                 <button class=" go-button">Sign Up</button>
@@ -70,19 +70,24 @@
 
     <script>
         function setPasswordMatch() {
-            const password = document.getElementById('password');
-            const confirmPassword = document.getElementById('confirm-password');
-            if (password.value == confirmPassword.value) {
-                password.classList.remove('password-no-match');
-                confirmPassword.classList.remove('password-no-match');
+            const password = document.getElementById('sign-up-password');
+            const passwordInput = password.querySelector('input');
+            const confirmPassword = document.getElementById('sign-up-confirm-password');
+            const confirmPasswordInput = confirmPassword.querySelector('input');
+            const confirmPasswordError = confirmPassword.querySelector('p');
+            console.log(passwordInput.value == confirmPasswordInput.value);
+            console.log(confirmPasswordInput.value);
+            if (passwordInput.value == confirmPasswordInput.value) {
+                passwordInput.classList.remove('password-no-match');
+                confirmPasswordError.textContent = ''
+                confirmPasswordInput.classList.remove('password-no-match');
             }
             else {
-                password.classList.add('password-no-match');
-                confirmPassword.classList.add('password-no-match');
+                passwordInput.classList.add('password-no-match');
+                confirmPasswordInput.classList.add('password-no-match');
+                confirmPasswordError.textContent = 'Passwords must match!'
             }
         }
-
-        setPasswordMatch();
     </script>
 </body>
 
