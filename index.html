@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Beer Olympics Signup!</title>
     <link rel="stylesheet" href="style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300&display=swap');
@@ -52,11 +52,12 @@
                     </div>
                     <div id="sign-up-password" class="sign-up-field">
                         <label for="password">Password*:</label>
-                        <input class="input-item" type="password" name="password" onkeyup="setPasswordMatch()">
+                        <input class="input-item" type="password" name="password" required onkeyup="setPasswordMatch()">
                     </div>
                     <div id="sign-up-confirm-password" class="sign-up-field">
                         <label for="confirm-password">Confirm Password*:</label>
-                        <input class="input-item" type="password" name="confirm-password" onkeyup="setPasswordMatch()">
+                        <input class="input-item" type="password" name="confirm-password" required
+                            onkeyup="setPasswordMatch()">
                         <p class="error"></p>
                     </div>
                     </label>
@@ -78,13 +79,11 @@
             console.log(passwordInput.value == confirmPasswordInput.value);
             console.log(confirmPasswordInput.value);
             if (passwordInput.value == confirmPasswordInput.value) {
-                passwordInput.classList.remove('password-no-match');
+                confirmPasswordInput.setCustomValidity('');
                 confirmPasswordError.textContent = ''
-                confirmPasswordInput.classList.remove('password-no-match');
             }
             else {
-                passwordInput.classList.add('password-no-match');
-                confirmPasswordInput.classList.add('password-no-match');
+                confirmPasswordInput.setCustomValidity('Passwords do not match!');
                 confirmPasswordError.textContent = 'Passwords must match!'
             }
         }
